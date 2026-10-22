@@ -1,25 +1,36 @@
-# Selamat datang Jawi Coin 
+# Jawi Token
 
-Repositori kode ini dirancang untuk mengelola landing page dan informasi aset kripto **Jawi Coin 
+Jawi Token adalah proyek token komunitas yang dirancang untuk masa depan, sebagai bukti dan warisan yang bisa dibawa oleh anak cucu.
 
-## 📌 Informasi Utama Proyek
+## Deskripsi
 
-- **Total Pasokan:** 1.000.000.000 $JAWI (1 Miliar)
-- **Komunitas & Ekosistem:** 99.9% (999.000.000 $JAWI)
-- **Pengembang / Developer:** 0.1% (1.000.000 $JAWI)
-- **Visi & Tujuan:** Aset kripto berbasis kebudayaan Jawa yang dirancang sebagai warisan digital abadi untuk dilimpahkan kepada generasi anak cucu.
+Project ini dibuat sebagai token komunitas bersenang-senang untuk masa depan, simpan untuk bukti anak cucu.
 
----
+## Tujuan
 
-## 📁 Berkas dalam Repositori Ini
+- Menyediakan identitas digital untuk komunitas Jawi
+- Menjadi simbol kolaborasi dan masa depan
+- Menjadi bukti sejarah digital bagi generasi berikutnya
 
-- `.github/workflows/` (`.github/alur kerja`) – Konfigurasi otomatisasi deployment GitHub Pages.
-- `index.html` (`indeks.html`) – Halaman utama landing page Jawi Coin.
-- `package.json` (`paket.json`) – Berkas konfigurasi dependensi dan informasi proyek.
-- `README.md` (`BACA SAYA`) – Dokumentasi proyek.
+## Struktur Repo
 
----
+- `index.html` — landing page utama
+- `README.md` — dokumentasi proyek
 
-## 🚀 Lisensi
+## Cara Menjalankan
 
-Proyek ini dilisensikan di bawah **MIT License** dan dimiliki sepenuhnya oleh **Komunitas Jawi**.
+Buka file `index.html` langsung di browser, atau jalankan server statis sederhana:
+
+```bash
+python3 -m http.server 8000
+```
+
+Lalu akses:
+
+```text
+http://localhost:8000
+```
+
+## Lisensi
+
+Proyek ini tersedia untuk penggunaan komunitas dan pengembangan lebih lanjut.

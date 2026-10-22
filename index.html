@@ -1,666 +1,310 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jawi Coin ($JAWI) - Warisan Digital Budaya Jawi Masa Depan</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Cinzel & Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Chart.js for Tokenomics Chart -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: {
-                            light: '#fef08a',
-                            DEFAULT: '#d4af37',
-                            dark: '#aa7c11',
-                            glow: '#ffd700'
-                        },
-                        obsidian: {
-                            light: '#1f1d1b',
-                            DEFAULT: '#0f0e0d',
-                            deep: '#070606'
-                        },
-                        batik: '#3a2312'
-                    },
-                    fontFamily: {
-                        cinzel: ['Cinzel', 'serif'],
-                        sans: ['Plus Jakarta Sans', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jawi Token</title>
     <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #070606;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #d4af37;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #aa7c11;
+      :root {
+        --bg: #0b1020;
+        --panel: #121a2d;
+        --primary: #f6c453;
+        --secondary: #8ed0ff;
+        --text: #eaf2ff;
+        --muted: #b6c5dd;
+        --accent: #7ef0c2;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #0b1020, #141d33 50%, #1b1131);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 48px 20px 80px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 24px;
+      }
+
+      .brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+
+      .brand span {
+        color: var(--primary);
+      }
+
+      .nav {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.96rem;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        align-items: center;
+        gap: 32px;
+        padding: 48px 0 30px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        background: rgba(246, 196, 83, 0.15);
+        color: var(--primary);
+        border: 1px solid rgba(246, 196, 83, 0.4);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 4vw, 5rem);
+        line-height: 1.05;
+        margin: 18px 0 16px;
+      }
+
+      .highlight {
+        color: var(--primary);
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.7;
+        max-width: 620px;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 28px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 14px 22px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: #0d1320;
+      }
+
+      .btn-secondary {
+        border: 1px solid rgba(255,255,255,0.18);
+        color: var(--text);
+        background: rgba(255,255,255,0.03);
+      }
+
+      .token-card {
+        background: rgba(18, 26, 45, 0.9);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+      }
+
+      .coin {
+        width: 190px;
+        height: 190px;
+        margin: 0 auto 18px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(circle at 30% 30%, #f8e5aa, #f2b642 38%, #ad7813 100%);
+        border: 10px solid rgba(255,255,255,0.18);
+        color: #1d1608;
+        font-weight: 800;
+        font-size: 2.2rem;
+        box-shadow: inset 0 8px 22px rgba(255,255,255,0.2), 0 20px 40px rgba(0,0,0,0.35);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 22px;
+      }
+
+      .stat {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 16px;
+        padding: 16px 10px;
+        text-align: center;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.3rem;
+        margin-bottom: 4px;
+      }
+
+      .section {
+        margin-top: 72px;
+      }
+
+      .section h2 {
+        font-size: clamp(1.6rem, 2vw, 2.4rem);
+        margin-bottom: 18px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: rgba(18, 26, 45, 0.72);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 18px;
+        padding: 24px;
+      }
+
+      .card h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        color: var(--secondary);
+      }
+
+      .card p {
+        color: var(--muted);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      footer {
+        margin-top: 70px;
+        text-align: center;
+        color: var(--muted);
+        padding-top: 24px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+
+      @media (max-width: 760px) {
+        .hero, .grid {
+          grid-template-columns: 1fr;
         }
 
-        /* Glassmorphism Dark Gold Effect */
-        .glass-gold {
-            background: rgba(20, 18, 15, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-        }
-        
-        .glass-gold:hover {
-            border-color: rgba(212, 175, 55, 0.6);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
         }
 
-        /* Gold Gradient Text */
-        .text-gold-gradient {
-            background: linear-gradient(135deg, #fff3a1 0%, #d4af37 50%, #aa7c11 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .stats {
+          grid-template-columns: 1fr;
         }
-
-        /* Gold Glowing Effect for Wayang Artwork */
-        .wayang-glow {
-            filter: drop-shadow(0px 0px 20px rgba(212, 175, 55, 0.4));
-            transition: all 0.5s ease-in-out;
-        }
-        .wayang-glow:hover {
-            filter: drop-shadow(0px 0px 35px rgba(255, 215, 0, 0.7));
-            transform: scale(1.02);
-        }
-
-        /* Custom Motif Batik Overlay */
-        .bg-batik-pattern {
-            background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 1px), radial-gradient(rgba(212, 175, 55, 0.05) 1px, #0f0e0d 1px);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
-        }
-
-        /* Animated Glowing Border */
-        @keyframes pulseGlow {
-            0%, 100% { border-color: rgba(212, 175, 55, 0.3); box-shadow: 0 0 15px rgba(212, 175, 55, 0.1); }
-            50% { border-color: rgba(212, 175, 55, 0.8); box-shadow: 0 0 30px rgba(212, 175, 55, 0.3); }
-        }
-        .pulse-border {
-            animation: pulseGlow 4s infinite ease-in-out;
-        }
+      }
     </style>
-</head>
-<body class="bg-obsidian-deep text-gray-200 font-sans antialiased bg-batik-pattern overflow-x-hidden">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand"><span>Jawi</span> Token</div>
+        <nav class="nav">
+          <a href="#about">Tentang</a>
+          <a href="#mission">Misi</a>
+          <a href="#values">Nilai</a>
+        </nav>
+      </header>
 
-    <!-- Navigation Header -->
-    <nav class="fixed w-full z-50 glass-gold border-b border-gold/20 top-0 left-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <!-- Logo -->
-                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-                    <div class="w-10 h-10 rounded-full border border-gold flex items-center justify-center bg-obsidian text-gold shadow-lg shadow-gold/20">
-                        <i class="fa-solid fa-coins text-xl"></i>
-                    </div>
-                    <span class="font-cinzel text-2xl font-bold tracking-wider text-gold-gradient">JAWI COIN</span>
-                </div>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 font-medium text-sm">
-                    <a href="#filosofi" class="hover:text-gold transition-colors duration-300 py-2">Filosofi</a>
-                    <a href="#kalkulator" class="hover:text-gold transition-colors duration-300 py-2">Simulasi Warisan</a>
-                    <a href="#tokenomik" class="hover:text-gold transition-colors duration-300 py-2">Tokenomik</a>
-                    <a href="#roadmap" class="hover:text-gold transition-colors duration-300 py-2">Peta Jalan</a>
-                    <a href="#faq" class="hover:text-gold transition-colors duration-300 py-2">FAQ</a>
-                </div>
-
-                <!-- Action Button -->
-                <div class="hidden md:block">
-                    <a href="#komunitas" class="px-6 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-obsidian-deep transition-all duration-300 font-semibold text-sm tracking-wide shadow-md hover:shadow-gold/30">
-                        Gabung Srawung
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobileMenuBtn" class="text-gold focus:outline-none p-2">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
+      <main>
+        <section class="hero">
+          <div>
+            <div class="eyebrow">Komunitas Masa Depan</div>
+            <h1>Jawi <span class="highlight">Token</span></h1>
+            <p class="subtitle">
+              Jawi Token adalah token komunitas yang dibuat untuk masa depan, sebagai simbol
+              kebersamaan, semangat digital, dan bukti sejarah yang bisa dijaga untuk anak cucu.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#about">Pelajari Lebih Lanjut</a>
+              <a class="btn btn-secondary" href="README.md">Lihat README</a>
             </div>
-        </div>
+          </div>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden glass-gold border-b border-gold/20 px-4 pt-2 pb-6 space-y-3">
-            <a href="#filosofi" class="block text-gray-300 hover:text-gold py-2">Filosofi</a>
-            <a href="#kalkulator" class="block text-gray-300 hover:text-gold py-2">Simulasi Warisan</a>
-            <a href="#tokenomik" class="block text-gray-300 hover:text-gold py-2">Tokenomik</a>
-            <a href="#roadmap" class="block text-gray-300 hover:text-gold py-2">Peta Jalan</a>
-            <a href="#faq" class="block text-gray-300 hover:text-gold py-2">FAQ</a>
-            <a href="#komunitas" class="inline-block w-full text-center px-6 py-2.5 rounded-full border border-gold text-gold hover:bg-gold hover:text-obsidian-deep transition-all mt-2">
-                Gabung Srawung
-            </a>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden flex items-center min-h-screen">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Hero Text -->
-                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
-                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-gold text-gold text-xs font-semibold uppercase tracking-widest border border-gold/30">
-                        <i class="fa-solid fa-crown text-gold"></i>
-                        <span>99.9% Murni Komunitas Jawi</span>
-                    </div>
-
-                    <h1 class="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-                        Warisan Digital <br>
-                        <span class="text-gold-gradient">Budaya Jawi</span> <br>
-                        Kanggo Anak Cucu
-                    </h1>
-
-                    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Koin digital komunitas murni kanthi total pasokan <strong>1 Miliar $JAWI</strong> tanpa alokasi spekulatif. Didesain khusus minangka pusaka ekonomi digital sing aman kanggo diturunake marang anak cucu lintas generasi.
-                    </p>
-
-                    <!-- CTAs -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#komunitas" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-gold to-gold-dark text-obsidian-deep font-bold hover:brightness-110 transition-all duration-300 shadow-lg shadow-gold/25 flex items-center justify-center space-x-2">
-                            <span>Gabung Srawung Komunitas</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <button onclick="showNotification('Whitepaper $JAWI siap diunduh dalam versi PDF.')" class="w-full sm:w-auto px-8 py-3.5 rounded-full glass-gold text-gold font-semibold hover:border-gold hover:bg-gold/10 transition-all duration-300 flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-scroll"></i>
-                            <span>Pelajari Whitepaper</span>
-                        </button>
-                    </div>
-
-                    <!-- Quick Badge Info -->
-                    <div class="pt-8 border-t border-gold/20 grid grid-cols-3 gap-4 text-center lg:text-left">
-                        <div>
-                            <p class="text-xs text-gray-400">Total Pasokan</p>
-                            <p class="font-cinzel font-bold text-gold text-lg">1 Miliar $JAWI</p>
-                        </div>
-                        <div>
-                            <p class="text-xs text-gray-400">Alokasi Komunitas</p>
-                            <p class="font-cinzel font-bold text-gold text-lg">999 Juta (99.9%)</p>
-                        </div>
-                        <div>
-                            <p class="text-xs text-gray-400">Alokasi Developer</p>
-                            <p class="font-cinzel font-bold text-gold text-lg">1 Juta (0.1%)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Artwork -->
-                <div class="lg:col-span-5 flex justify-center relative">
-                    <div class="relative w-72 sm:w-80 md:w-96 lg:w-full max-w-md">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-gold/20 via-gold/5 to-transparent rounded-full blur-2xl"></div>
-                        <img src="28116.jpg" alt="Wayang Kulit Artwork" class="w-full h-auto wayang-glow relative z-10 drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]" onerror="this.src='https://placehold.co/400x500/1f1d1b/d4af37?text=Wayang+Jawi+Coin'">
-                    </div>
-                </div>
-
+          <div class="token-card">
+            <div class="coin">J</div>
+            <div class="stats">
+              <div class="stat">
+                <strong>Jawi</strong>
+                <span>Nama</span>
+              </div>
+              <div class="stat">
+                <strong>2026</strong>
+                <span>Awal</span>
+              </div>
+              <div class="stat">
+                <strong>∞</strong>
+                <span>Potensi</span>
+              </div>
             </div>
-        </div>
-    </section>
+          </div>
+        </section>
 
-    <!-- SECTION: SIMULASI WARISAN MASA DEPAN (KALKULATOR) -->
-    <section id="kalkulator" class="py-20 relative bg-obsidian/80 border-y border-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-gold-gradient mb-4">Simulasi Warisan Anak Cucu</h2>
-                <p class="text-gray-300">Hitung estimasi pertumbuhan nilai aset $JAWI yang dialokasikan sebagai tabungan pusaka digital keluarga dalam jangka panjang.</p>
-            </div>
+        <section id="about" class="section">
+          <h2>Tentang Proyek</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>Komunitas</h3>
+              <p>
+                Jawi Token lahir dari semangat komunitas yang ingin mengeksplorasi masa depan
+                digital sambil tetap menjaga nilai kebersamaan dan warisan.
+              </p>
+            </article>
 
-            <div class="max-w-4xl mx-auto glass-gold rounded-3xl p-6 sm:p-10 pulse-border">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    
-                    <!-- Controls -->
-                    <div class="space-y-6">
-                        <div>
-                            <label class="block text-xs uppercase tracking-wider text-gold font-semibold mb-2">Jumlah Token $JAWI Ditanam</label>
-                            <input type="range" id="tokenAmount" min="10000" max="1000000" step="10000" value="100000" class="w-full h-2 bg-obsidian-deep rounded-lg appearance-none cursor-pointer accent-gold">
-                            <div class="flex justify-between text-xs text-gray-400 mt-2">
-                                <span>10,000 $JAWI</span>
-                                <span id="tokenAmountValue" class="text-gold font-bold text-base">100,000 $JAWI</span>
-                                <span>1,000,000 $JAWI</span>
-                            </div>
-                        </div>
+            <article id="mission" class="card">
+              <h3>Misi</h3>
+              <p>
+                Menjadi simbol digital yang membawa semangat inovasi, kolaborasi, dan kepastian
+                bahwa jejak komunitas akan terus dikenang.
+              </p>
+            </article>
 
-                        <div>
-                            <label class="block text-xs uppercase tracking-wider text-gold font-semibold mb-2">Jangka Waktu Simpan (Generasi)</label>
-                            <div class="grid grid-cols-3 gap-3">
-                                <button onclick="setHoldYear(10)" class="year-btn py-2 rounded-xl glass-gold text-sm font-semibold border border-gold/30 hover:border-gold text-gray-200 active-year" data-year="10">10 Tahun</button>
-                                <button onclick="setHoldYear(20)" class="year-btn py-2 rounded-xl glass-gold text-sm font-semibold border border-gold/30 hover:border-gold text-gray-200" data-year="20">20 Tahun</button>
-                                <button onclick="setHoldYear(30)" class="year-btn py-2 rounded-xl glass-gold text-sm font-semibold border border-gold/30 hover:border-gold text-gray-200" data-year="30">30 Tahun (Anak Cucu)</button>
-                            </div>
-                        </div>
+            <article id="values" class="card">
+              <h3>Nilai</h3>
+              <p>
+                Keberlanjutan, kebersamaan, dan memori kolektif menjadi fondasi utama dalam
+                perjalanan Jawi Token menuju masa depan.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
 
-                        <div>
-                            <label class="block text-xs uppercase tracking-wider text-gold font-semibold mb-2">Proyeksi Pertumbuhan Ekosistem Tahunan</label>
-                            <select id="growthRate" class="w-full bg-obsidian border border-gold/30 rounded-xl p-3 text-sm text-gray-200 focus:outline-none focus:border-gold">
-                                <option value="0.08">Konservatif (8% / tahun)</option>
-                                <option value="0.15" selected>Moderat (15% / tahun)</option>
-                                <option value="0.25">Pertumbuhan Organik (25% / tahun)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Result Box -->
-                    <div class="bg-obsidian-deep/90 border border-gold/30 rounded-2xl p-6 text-center space-y-4">
-                        <i class="fa-solid fa-gem text-3xl text-gold"></i>
-                        <p class="text-xs uppercase text-gray-400 tracking-widest">Estimasi Nilai Warisan Masa Depan</p>
-                        <div id="simulatedResult" class="font-cinzel text-3xl sm:text-4xl font-extrabold text-gold-gradient">
-                            Rp 404.550.000
-                        </div>
-                        <p class="text-xs text-gray-400 italic">
-                            *Asumsi nilai dasar awal 1 $JAWI = Rp 1.000. Kalkulasi berdasarkan proyeksi majemuk untuk simpanan jangka panjang.
-                        </p>
-                        <div class="pt-2">
-                            <span class="inline-block bg-gold/10 text-gold border border-gold/30 px-4 py-1.5 rounded-full text-xs font-semibold">
-                                Legacy Hold Secured
-                            </span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: FILOSOFI & VISI -->
-    <section id="filosofi" class="py-24 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-gold text-xs font-bold uppercase tracking-widest">Landasan Kebudayaan</span>
-                <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-white mt-2 mb-6">Filosofi &amp; Pitutur Luhur</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                
-                <div class="glass-gold p-8 rounded-2xl transition-all duration-300 group">
-                    <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/40 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-hands-holding-child"></i>
-                    </div>
-                    <h3 class="font-cinzel text-xl font-bold text-gold mb-3">Warisan Anak Cucu</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Biyen wong tua ninggali tanah lan pusaka, saiki kita ninggali simpanan digital adil sing duwe nilai sejati kanggo anak cucu.
-                    </p>
-                </div>
-
-                <div class="glass-gold p-8 rounded-2xl transition-all duration-300 group">
-                    <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/40 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-users text-gold"></i>
-                    </div>
-                    <h3 class="font-cinzel text-xl font-bold text-gold mb-3">99.9% Murni Komunitas</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Sebanyak 999 Juta $JAWI dialokasikan penuh untuk komunitas. Tidak ada dominasi kepemilikan oleh pengembang.
-                    </p>
-                </div>
-
-                <div class="glass-gold p-8 rounded-2xl transition-all duration-300 group">
-                    <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/40 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-code text-gold"></i>
-                    </div>
-                    <h3 class="font-cinzel text-xl font-bold text-gold mb-3">0.1% Developer Teknis</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        1 Juta $JAWI dibatasi khusus untuk biaya eksekusi teknis smart contract awal demi integritas murni.
-                    </p>
-                </div>
-
-                <div class="glass-gold p-8 rounded-2xl transition-all duration-300 group">
-                    <div class="w-14 h-14 rounded-2xl bg-gold/10 border border-gold/40 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-people-carry-box"></i>
-                    </div>
-                    <h3 class="font-cinzel text-xl font-bold text-gold mb-3">Gotong Royong &amp; Srawung</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Dikelola kanthi prinsip musyawarah lan kebersamaan warga Jawi ing sakandhinging donya.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: TOKENOMIK -->
-    <section id="tokenomik" class="py-24 relative bg-obsidian">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-gold text-xs font-bold uppercase tracking-widest">Pasokan Tetap 1 Miliar Token</span>
-                <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">Tokenomik $JAWI</h2>
-                <p class="text-gray-400 text-sm">Transparansi mutlak: 999.000.000 token milik komunitas, 1.000.000 token untuk pengembang.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Chart Canvas -->
-                <div class="lg:col-span-6 glass-gold p-6 rounded-3xl flex justify-center items-center relative">
-                    <div class="w-full max-w-md h-80 relative">
-                        <canvas id="tokenomicsChart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Stat Cards -->
-                <div class="lg:col-span-6 space-y-6">
-                    
-                    <div class="glass-gold p-6 rounded-2xl flex items-center justify-between border-l-4 border-l-yellow-400">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-4 h-4 rounded-full bg-yellow-400"></div>
-                            <div>
-                                <h4 class="font-cinzel font-bold text-white text-lg">Komunitas &amp; Ekosistem Jawi</h4>
-                                <p class="text-xs text-gray-400">999.000.000 $JAWI (Sirkulasi, kas gotong royong &amp; warisan anak cucu)</p>
-                            </div>
-                        </div>
-                        <span class="font-cinzel font-extrabold text-gold text-2xl">99.9%</span>
-                    </div>
-
-                    <div class="glass-gold p-6 rounded-2xl flex items-center justify-between border-l-4 border-l-amber-900">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-4 h-4 rounded-full bg-amber-900"></div>
-                            <div>
-                                <h4 class="font-cinzel font-bold text-white text-lg">Alokasi Pengembang (Developer)</h4>
-                                <p class="text-xs text-gray-400">1.000.000 $JAWI (Khusus deployment &amp; pemeliharaan teknis awal)</p>
-                            </div>
-                        </div>
-                        <span class="font-cinzel font-extrabold text-gold text-2xl">0.1%</span>
-                    </div>
-
-                    <div class="p-4 bg-gold/5 border border-gold/20 rounded-xl text-xs text-gray-300 flex items-start space-x-3">
-                        <i class="fa-solid fa-shield-check text-gold text-lg mt-0.5"></i>
-                        <span><strong>Garansi Integritas:</strong> Total pasokan dikunci pada angka 1 Miliar $JAWI dan tidak dapat ditambah (*fixed supply*). Seluruh porsi terbesar didedikasikan untuk keberlanjutan Komunitas Jawi.</span>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: ROADMAP GENERASIONAL -->
-    <section id="roadmap" class="py-24 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-gold text-xs font-bold uppercase tracking-widest">Masa Depan &amp; Kebudayaan</span>
-                <h2 class="font-cinzel text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">Peta Jalan Warisan</h2>
-                <p class="text-gray-400 text-sm">Langkah terencana untuk mengabadikan nilai ekonomi digital bagi anak cucu.</p>
-            </div>
-
-            <div class="relative border-l-2 border-gold/30 max-w-4xl mx-auto space-y-12 pl-6 sm:pl-10">
-                
-                <!-- Phase 1 -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-gold border-4 border-obsidian-deep shadow-lg shadow-gold/50"></div>
-                    
-                    <div class="glass-gold p-6 sm:p-8 rounded-2xl">
-                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Fase 1</span>
-                        <h3 class="font-cinzel text-2xl font-bold text-white mt-1 mb-3">Babad Alas (Awal Mula)</h3>
-                        <ul class="space-y-2 text-gray-300 text-sm">
-                            <li class="flex items-start space-x-2">
-                                <i class="fa-solid fa-check-circle text-gold mt-1"></i>
-                                <span>Peluncuran Smart Contract $JAWI kanthi pasokan tetap 1 Miliar Token (99.9% Komunitas / 0.1% Developer).</span>
-                            </li>
-                            <li class="flex items-start space-x-2">
-                                <i class="fa-solid fa-check-circle text-gold mt-1"></i>
-                                <span>Pembentukan grup komunikasi Paguyuban Digital &amp; Srawung Jawi.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Phase 2 -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-gold/50 border-4 border-obsidian-deep"></div>
-                    
-                    <div class="glass-gold p-6 sm:p-8 rounded-2xl">
-                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Fase 2</span>
-                        <h3 class="font-cinzel text-2xl font-bold text-white mt-1 mb-3">Mbangun Desa (Penguatan Ekosistem)</h3>
-                        <ul class="space-y-2 text-gray-300 text-sm">
-                            <li class="flex items-start space-x-2">
-                                <i class="fa-solid fa-circle-notch text-gold mt-1 animate-spin"></i>
-                                <span>Integrasi $JAWI dalam pasar gotong royong &amp; kegiatan ekonomi warga Jawi.</span>
-                            </li>
-                            <li class="flex items-start space-x-2">
-                                <i class="fa-solid fa-circle-notch text-gold mt-1"></i>
-                                <span>Fitur Vault Kunci Warisan (Hold jangka panjang untuk anak cucu).</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Phase 3 -->
-                <div class="relative group">
-                    <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-obsidian-light border-4 border-gold/40"></div>
-                    
-                    <div class="glass-gold p-6 sm:p-8 rounded-2xl">
-                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Fase 3</span>
-                        <h3 class="font-cinzel text-2xl font-bold text-white mt-1 mb-3">Wijaya (Penyerahan Ke Anak Cucu)</h3>
-                        <ul class="space-y-2 text-gray-300 text-sm">
-                            <li class="flex items-start space-x-2">
-                                <i class="fa-regular fa-circle text-gold/50 mt-1"></i>
-                                <span>Tata kelola penuh melalui DAO Musyawarah Komunitas.</span>
-                            </li>
-                            <li class="flex items-start space-x-2">
-                                <i class="fa-regular fa-circle text-gold/50 mt-1"></i>
-                                <span>Pemanfaatan kas komunitas untuk beasiswa &amp; pelestarian kebudayaan Jawi.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: FAQ -->
-    <section id="faq" class="py-20 relative bg-obsidian border-t border-gold/20">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-gold text-xs font-bold uppercase tracking-widest">Pertanyaan Umum</span>
-                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white mt-2">Pertanyaan Sering Diajukan</h2>
-            </div>
-
-            <div class="space-y-4">
-                <div class="glass-gold p-6 rounded-2xl cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-cinzel font-bold text-gold text-lg">Berapa total pasokan Jawi Coin?</h4>
-                        <i class="fa-solid fa-chevron-down text-gold transition-transform duration-300"></i>
-                    </div>
-                    <p class="text-gray-300 text-sm mt-3 hidden">
-                        Total pasokan adalah tepat 1.000.000.000 $JAWI (1 Miliar Token) bersifat *fixed supply* dan tidak akan pernah dicetak ulang agar nilai aset warisan tetap terjaga.
-                    </p>
-                </div>
-
-                <div class="glass-gold p-6 rounded-2xl cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-cinzel font-bold text-gold text-lg">Mengapa alokasi developer hanya 0.1% (1 Juta Token)?</h4>
-                        <i class="fa-solid fa-chevron-down text-gold transition-transform duration-300"></i>
-                    </div>
-                    <p class="text-gray-300 text-sm mt-3 hidden">
-                        Jawi Coin didesain murni sebagai koin komunitas dan aset warisan, bukan sarana pengayaan pribadi developer. Alokasi 0.1% hanya digunakan untuk menutupi biaya teknis smart contract, sedangkan 99.9% sisanya sepenuhnya dikembalikan untuk komunitas.
-                    </p>
-                </div>
-
-                <div class="glass-gold p-6 rounded-2xl cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-cinzel font-bold text-gold text-lg">Bagaimana cara menurunkan $JAWI ke anak cucu?</h4>
-                        <i class="fa-solid fa-chevron-down text-gold transition-transform duration-300"></i>
-                    </div>
-                    <p class="text-gray-300 text-sm mt-3 hidden">
-                        Anda dapat menyimpan $JAWI di dompet kripto pribadi (seperti Metamask/Trust Wallet) dan mewariskan frasa pemulihan (seed phrase) atau menggunakan fitur Kunci Warisan (Vault) yang dikunci sesuai jangka waktu generasi yang Anda tentukan.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION: JOIN COMMUNITY (FOOTER CTA) -->
-    <section id="komunitas" class="py-20 relative bg-gradient-to-b from-obsidian to-obsidian-deep">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="glass-gold p-10 sm:p-16 rounded-3xl border border-gold/40 space-y-8 shadow-2xl">
-                <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-white">
-                    Siap Menanam Warisan Digital Anda?
-                </h2>
-                <p class="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base">
-                    Mari bergabung dalam paguyuban digital Jawi Coin. Jadilah bagian dari pionir yang mengamankan pusaka ekonomi digital untuk anak cucu.
-                </p>
-
-                <div class="flex flex-wrap justify-center gap-4 pt-2">
-                    <a href="https://telegram.org" target="_blank" class="px-8 py-3.5 rounded-full bg-gold text-obsidian-deep font-bold hover:bg-gold-light transition-all flex items-center space-x-3 shadow-lg shadow-gold/20">
-                        <i class="fa-brands fa-telegram text-xl"></i>
-                        <span>Telegram Komunitas</span>
-                    </a>
-                    <a href="https://discord.com" target="_blank" class="px-8 py-3.5 rounded-full glass-gold text-gold hover:bg-gold/10 font-bold transition-all flex items-center space-x-3">
-                        <i class="fa-brands fa-discord text-xl"></i>
-                        <span>Discord Srawung</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="py-8 bg-obsidian-deep border-t border-gold/10 text-xs text-gray-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="flex items-center space-x-2">
-                <span class="font-cinzel font-bold text-gold">JAWI COIN ($JAWI)</span>
-                <span>&copy; 2026. Hak Cipta Dilindungi.</span>
-            </div>
-            <div class="text-center sm:text-right italic">
-                Urip Iku Urup — Migunani Marang Liyan.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Toast Notification Box -->
-    <div id="toastNotification" class="fixed bottom-6 right-6 glass-gold border border-gold text-gold px-6 py-4 rounded-2xl shadow-2xl hidden z-50 flex items-center space-x-3 transition-all">
-        <i class="fa-solid fa-circle-info text-xl"></i>
-        <span id="toastText" class="text-sm text-gray-200"></span>
+      <footer>
+        Jawi Token — simpan untuk bukti anak cucu.
+      </footer>
     </div>
-
-    <!-- JAVASCRIPT INTERACTIVITY -->
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // FAQ Toggle
-        function toggleFaq(element) {
-            const p = element.querySelector('p');
-            const icon = element.querySelector('i');
-            p.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
-        }
-
-        // Toast Notification System
-        function showNotification(message) {
-            const toast = document.getElementById('toastNotification');
-            const toastText = document.getElementById('toastText');
-            toastText.textContent = message;
-            toast.classList.remove('hidden');
-            setTimeout(() => {
-                toast.classList.add('hidden');
-            }, 4000);
-        }
-
-        // Kalkulator Simulasi
-        const tokenInput = document.getElementById('tokenAmount');
-        const tokenAmountValue = document.getElementById('tokenAmountValue');
-        const growthRateSelect = document.getElementById('growthRate');
-        const simulatedResult = document.getElementById('simulatedResult');
-        let selectedYear = 10;
-
-        function formatRupiah(number) {
-            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(number);
-        }
-
-        function calculateSimulation() {
-            const tokens = parseFloat(tokenInput.value);
-            const growthRate = parseFloat(growthRateSelect.value);
-            const initialPricePerToken = 1000; // Rp 1.000 per token
-            
-            const futureValue = (tokens * initialPricePerToken) * Math.pow((1 + growthRate), selectedYear);
-            
-            tokenAmountValue.textContent = tokens.toLocaleString('id-ID') + " $JAWI";
-            simulatedResult.textContent = formatRupiah(futureValue);
-        }
-
-        function setHoldYear(year) {
-            selectedYear = year;
-            document.querySelectorAll('.year-btn').forEach(btn => {
-                btn.classList.remove('bg-gold/20', 'border-gold', 'text-gold');
-                if (parseInt(btn.getAttribute('data-year')) === year) {
-                    btn.classList.add('bg-gold/20', 'border-gold', 'text-gold');
-                }
-            });
-            calculateSimulation();
-        }
-
-        tokenInput.addEventListener('input', calculateSimulation);
-        growthRateSelect.addEventListener('change', calculateSimulation);
-
-        // Chart.js Tokenomics Initialization (99.9% vs 0.1%)
-        window.onload = function() {
-            calculateSimulation();
-
-            const ctx = document.getElementById('tokenomicsChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Komunitas Jawi (999.000.000 $JAWI)', 'Developer (1.000.000 $JAWI)'],
-                    datasets: [{
-                        data: [99.9, 0.1],
-                        backgroundColor: [
-                            '#facc15', // yellow-400
-                            '#78350f'  // amber-900 (developer)
-                        ],
-                        borderColor: '#0f0e0d',
-                        borderWidth: 3,
-                        hoverOffset: 8
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return ' ' + context.label + ': ' + context.raw + '%';
-                                }
-                            }
-                        }
-                    },
-                    cutout: '75%'
-                }
-            });
-        };
-    </script>
-</body>
+  </body>
 </html>
