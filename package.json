@@ -1,0 +1,18 @@
+{
+  "name": "jawi-coin",
+  "version": "1.0.0",
+  "description": "Koin Aset Kripto Komunitas Jawi - Warisan Abadi Anak Cucu",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "jawi",
+    "crypto",
+    "community-token",
+    "blockchain",
+    "web3"
+  ],
+  "author": "Komunitas Jawi",
+  "license": "MIT"
+}
