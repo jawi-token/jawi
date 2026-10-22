@@ -19,26 +19,26 @@ Menjaga integritas ekosistem, ngurmati para leluhur, lan mbangun masa depan gene
 ​Simbol: $JAWI
 ​Total Pasokan: Fixed Supply (Pasokan Tetap, ora iso ditambah supaya njaga nilai warisan)
 ​Alokasi:
-​🌿 Komunitas & Sirkulasi: 50%
-​🏺 Dana Warisan / Treasury: 30% (Locked / Dikunci kanggo generasi masa depan)
-​🤝 Pengembangan & Kebudayaan: 20%
+​🌿 Komunitas & Sirkulasi
+​🏺 Dana Warisan / Treasury (Locked / Dikunci kanggo generasi masa depan)
+​🤝 Pengembangan & Kebudayaan
 ​🗺️ Peta Jalan (Roadmap)
-​🌿 Fase 1: Babat Alas (Foundations)
+​🌿  (Foundations)
 ​Peluncuran Kontrak Cerdas (Smart Contract) & Token $JAWI.
 ​Penulisan Dokumen Resmi & Pembentukan Komunitas Inti.
 ​Distribusi Awal kanggo Anggota Komunitas Jawi.
-​🏛️ Fase 2: Mbangun Candi (Ecosystem Building)
+​🏛️  (Ecosystem Building)
 ​Integrasi $JAWI ing UMKM lan kegiatan ekonomi komunitas.
 ​Pembentukan DAO (Decentralized Autonomous Organization) adhedhasar Musyawarah.
 ​Program Penguncian Warisan (Legacy Staking) kanggo anak cucu.
-​👑 Fase 3: Wijaya (Generational Legacy)
+​👑 (Generational Legacy)
 ​Kemitraan global antar komunitas Jawi internasional.
 ​Pemanfaatan Dana Warisan kanggo beasiswa lan pelestarian budaya.
 ​Penyerahan tata kelola penuh marang generasi penerus.
 ​🤝 Cara Gabung lan Srawung
 ​Yen sampeyan bagaian saka Komunitas Jawi lan pengin melu njaga warisan digital iki:
 ​Siapke Wallet: Gunakake dompet digital sing didukung (Web3 Wallet).
-​Gabung Komunitas: Ngetutake saluran komunikasi resmi kita ing Telegram / Discord.
+​Gabung Komunitas: Ngetutake saluran komunikasi resmi kita ing Telegram 
 ​Simpen lan Jaga: Simpen $JAWI minangka simpanan jangka panjang kanggo anak cucu.
 ​⚠️ Disklaimer (Disclaimer)
 ​Jawi Coin ($JAWI) diciptakake adhedhasar semangat gotong royong lan kebudayaan.$JAWI dudu sarana skema investasi cepat sugih (get-rich-quick), nanging minangka simbol persaudaraan lan tabungan budaya-ekonomi jangka panjang kanggo generasi masa depan.
