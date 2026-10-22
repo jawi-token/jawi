@@ -1,4 +1,4 @@
-
+JAWI
 📜 Aksara & Visi (Vision)
 ​Jawi Coin ($JAWI) dudu sekadar aset kripto utawa instrumen spekulasi. $JAWI yaiku Koin Komunitas Digital sing diciptakake khusus kanggo njaga, nguatake, lan ngalungake Komunitas Jawi ing era digital modern.
 ​Koin iki didesain minangka tabungan nilai (store of value) lan simpul persaudaraan sing ditujokake kanggo masa depan—minangka warisan (pusaka digital) sing bisa diturunake marang anak cucu supaya budaya, ekonomi, lan ikatan seduluran Jawi tetep lestari lan digdaya.
