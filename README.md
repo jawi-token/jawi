@@ -1,6 +1,6 @@
 # Jawi Token
 
-Jawi Token adalah proyek komunitas yang berfokus pada masa depan digital, kolaborasi, dan warisan budaya. Token ini dirancang sebagai simbol semangat komunitas yang ingin meninggalkan jejak positif untuk generasi berikutnya.
+Jawi Token adalah proyek komunitas yang berfokus pada masa depan digital, kolaborasi, dan warisan budaya. Token ini didesain sebagai simbol semangat komunitas yang ingin meninggalkan jejak positif untuk generasi berikutnya.
 
 ## Deskripsi
 
@@ -8,21 +8,21 @@ Jawi Token, token komunitas bersenang-senang untuk masa depan, simpan untuk bukt
 
 ## Visi
 
-Menjadi komunitas digital yang kuat, modern, dan berdampak, sekaligus menjaga nilai sejarah dan semangat kolektif untuk masa depan.
+Membawa komunitas Jawi ke ekosistem digital yang lebih kuat, lebih terhubung, dan lebih berdampak, sambil menjaga semangat kolektif serta warisan budaya.
 
 ## Misi
 
-- Mendorong kolaborasi dan keterhubungan komunitas
-- Menjaga semangat digital yang relevan dengan masa kini
-- Mengembangkan proyek yang dapat tumbuh secara berkelanjutan
-- Menjadi warisan yang bisa dibanggakan oleh anak cucu
+- Menghubungkan komunitas melalui ekosistem digital yang konsisten
+- Mendorong semangat kolaborasi dan inovasi
+- Menjaga warisan digital sebagai bukti sejarah bagi anak cucu
+- Mengembangkan identitas komunitas yang lebih kuat di masa depan
 
 ## Fitur Utama
 
-- Landing page komunitas yang modern
-- Desain UI yang sederhana namun elegan
-- Dapat dikembangkan menjadi portal komunitas atau platform token
-- Mudah diperluas ke fitur tambahan di masa depan
+- Landing page yang modern dan responsif
+- Desain branding komunitas yang jelas
+- Struktur dasar yang mudah dikembangkan lebih lanjut
+- Cocok sebagai platform komunitas atau token page
 
 ## Struktur Repository
 
@@ -35,13 +35,13 @@ jawi/
 
 ## Cara Menjalankan
 
-Buka `index.html` langsung di browser, atau jalankan server lokal:
+Buka `index.html` di browser langsung, atau jalankan server lokal:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Lalu akses halaman di browser:
+Kemudian akses:
 
 ```text
 http://localhost:8000
@@ -49,14 +49,14 @@ http://localhost:8000
 
 ## Roadmap
 
-1. Menyelesaikan branding dan landing page
-2. Menata struktur komunitas yang lebih jelas
-3. Mengembangkan fitur utama dan pengalaman pengguna
-4. Menambah elemen komunitas yang lebih luas di masa depan
+1. Membangun landing page komunitas
+2. Menyempurnakan branding dan konsep visual
+3. Menambahkan fitur komunitas dan interaksi pengguna
+4. Mengembangkan pengalaman digital yang lebih matang
 
 ## Catatan
 
-Proyek ini masih dalam tahap awal pengembangan dan dapat terus dikembangkan sesuai kebutuhan komunitas.
+Proyek ini masih dalam tahap awal dan dapat terus dikembangkan sesuai kebutuhan komunitas.
 
 ## Lisensi
 
