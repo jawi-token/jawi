@@ -1,6 +1,6 @@
 # Jawi Token
 
-Jawi Token adalah proyek komunitas yang berfokus pada masa depan digital, kolaborasi, dan warisan budaya. Token ini didesain sebagai simbol semangat komunitas yang ingin meninggalkan jejak positif untuk generasi berikutnya.
+Jawi Token adalah proyek komunitas yang berfokus pada masa depan digital, kolaborasi, dan warisan budaya. Token ini dirancang sebagai simbol semangat komunitas yang ingin meninggalkan jejak positif untuk generasi berikutnya.
 
 ## Deskripsi
 
@@ -8,52 +8,56 @@ Jawi Token, token komunitas bersenang-senang untuk masa depan, simpan untuk bukt
 
 ## Visi
 
-Membawa komunitas Jawi ke ekosistem digital yang lebih kuat, lebih terhubung, dan lebih berdampak, sambil menjaga nilai sejarah dan semangat kolektif.
+Menjadi komunitas digital yang kuat, modern, dan berdampak, sekaligus menjaga nilai sejarah dan semangat kolektif untuk masa depan.
 
 ## Misi
 
-- Mendorong komunitas untuk berkembang bersama
-- Menjaga semangat kolaborasi digital
-- Menyediakan identitas komunitas yang bernilai
-- Menjadi warisan yang bisa dibanggakan anak cucu
+- Mendorong kolaborasi dan keterhubungan komunitas
+- Menjaga semangat digital yang relevan dengan masa kini
+- Mengembangkan proyek yang dapat tumbuh secara berkelanjutan
+- Menjadi warisan yang bisa dibanggakan oleh anak cucu
 
 ## Fitur Utama
 
-- Landing page komunitas yang modern dan sederhana
-- Desain yang cocok untuk komunitas digital
-- Dapat dikembangkan menjadi portal token atau komunitas web3
-- Mudah diperluas ke fitur lain di masa depan
+- Landing page komunitas yang modern
+- Desain UI yang sederhana namun elegan
+- Dapat dikembangkan menjadi portal komunitas atau platform token
+- Mudah diperluas ke fitur tambahan di masa depan
 
 ## Struktur Repository
 
-- `index.html` — landing page utama untuk Jawi Token
-- `README.md` — dokumentasi proyek
+```text
+jawi/
+├── index.html
+├── README.md
+└── assets/
+```
 
-## Jalankan Secara Lokal
+## Cara Menjalankan
 
-Buka file `index.html` di browser langsung, atau jalankan server lokal:
+Buka `index.html` langsung di browser, atau jalankan server lokal:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Lalu akses:
+Lalu akses halaman di browser:
 
 ```text
 http://localhost:8000
 ```
 
-## Roadmap Sederhana
+## Roadmap
 
-1. Landing page komunitas
-2. Desain branding Jawi Token
-3. Integrasi fitur komunitas dan token page
-4. Pengembangan lebih lanjut sesuai kebutuhan
+1. Menyelesaikan branding dan landing page
+2. Menata struktur komunitas yang lebih jelas
+3. Mengembangkan fitur utama dan pengalaman pengguna
+4. Menambah elemen komunitas yang lebih luas di masa depan
 
 ## Catatan
 
-Proyek ini masih dalam tahap awal dan dapat dikembangkan lebih lanjut sesuai kebutuhan komunitas.
+Proyek ini masih dalam tahap awal pengembangan dan dapat terus dikembangkan sesuai kebutuhan komunitas.
 
 ## Lisensi
 
-Proyek ini dibangun untuk kebutuhan komunitas dan dapat dikembangkan lebih lanjut secara terbuka.
+Proyek ini dibuat untuk kebutuhan komunitas dan dapat dikembangkan lebih lanjut secara terbuka.
